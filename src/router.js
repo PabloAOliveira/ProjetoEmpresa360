@@ -29,7 +29,17 @@ const routes = [
             { path: 'vendas', component: Vendas, children: 
                 [
                     { path: 'leads', component: Leads, name: 'leads' }, //localhost:8080/home/vendas/leads
-                    { path: 'leads/:id', component: Lead, name: 'lead', alias: ['/l/:id', '/pessoa/:id', '/:id'] }, //localhost:8080/5
+                    { 
+                        path: 'leads/:id/:outroParametro', 
+                        props: true,
+                        component: Lead, 
+                        name: 'lead', 
+                        alias: [
+                            '/l/:id/:outroParametro', 
+                            '/pessoa/:id/:outroParametro', 
+                            '/:id/:outroParametro'
+                        ] 
+                    }, //localhost:8080/5
                     { path: 'contratos', component: Contratos, name: 'contratos' }, //localhost:8080/home/vendas/contratos
                     { path: '', component: VendasPadrao, name: 'vendas' } //localhost:8080/home/vendas/
                     

@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-auto d-flex justify-content-between">
-            <button type="button" class="btn btn-warning" @click="$router.push({ name: 'leads', params: {} })('/home/vendas/leads')">Voltar</button>
+            <button type="button" class="btn btn-warning" @click="$router.push({ name: 'leads' })">Voltar</button>
             <button type="button" class="btn btn-primary">Atualizar</button>
         </div>
     </div>
@@ -34,9 +34,10 @@ import ApiMixin from '@/mixins/ApiMixin'
 
 export default {
     name: 'Lead',
+    props: ['id', 'outroParametro'],
     mixins: [ApiMixin],
     created() {
-        this.getDadosApi(`http://localhost:3000/leads/${this.$route.params.id}`)
+        this.getDadosApi(`http://localhost:3000/leads/${this.id}`)
     }
 }
 </script>
