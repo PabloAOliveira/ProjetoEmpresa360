@@ -37,6 +37,7 @@ export default {
     props: ['id', 'outroParametro'],
     mixins: [ApiMixin],
     created() {
+        console.log(this.$props)
         this.getDadosApi(`http://localhost:3000/leads/${this.id}`)
     }
 }

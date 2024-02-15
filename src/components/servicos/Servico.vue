@@ -16,7 +16,7 @@ export default {
     props: ['id'],
     created() {
         //console.log('Servico', this.$route.params.id)
-        //console.log(this.$props)
+        //console.log('Via props', this.$props)
         //console.log('Componente servico foi criado')
         this.getDadosApi(`http://localhost:3000/servicos/${this.id}`)
     },

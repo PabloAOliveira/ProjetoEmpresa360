@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h5>Componente Opções</h5>
-        <p>Poderiamos recuperar as opções do serviço id</p>
+        <h5>Compondente Opções</h5>
+        <p>Poderíamos recuperar as opções do serviço id {{id}}</p>
     </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     name: 'Opcoes',
     props: ['id'],
     created() {
-        console.log('Parâmetro via props', this.id)
-    }
+        //console.log('Parâmetro via props', this.id)
+    }    
 }
 </script>

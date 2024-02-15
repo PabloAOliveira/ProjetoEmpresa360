@@ -32,7 +32,27 @@ const routes = [
                     { 
                         path: 'leads/:id/:outroParametro', 
                         props: true,
-                        component: Lead, 
+                        /*
+                        props: {
+                            id: 4,
+                            outroParametro: 'pt-br'
+                        },
+                        */
+                        /*
+                        props: route => {
+
+                            console.log('Rota ativa: ', route)
+
+                            let teste = route.query.idioma ? route.query.idioma : route.params.outroParametro
+
+                            //implementando uma lógica para definir as props que serão submetidas para o componente roteado
+                            return { 
+                                id: parseInt(route.params.id) + 1,
+                                outroParametro: teste 
+                            }
+                        },
+                        */
+                        component: Lead,
                         name: 'lead', 
                         alias: [
                             '/l/:id/:outroParametro', 
@@ -50,7 +70,7 @@ const routes = [
                     { 
                         path: ':id', 
                         props: {
-                            default: true, 
+                            default: true,
                             indicadores: true,
                             opcoes: true
                         },

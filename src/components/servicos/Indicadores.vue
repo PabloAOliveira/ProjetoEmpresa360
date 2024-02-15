@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h5>Componente Indicadores</h5>
-        <p>Poderiamos recuperar os indicadores do serviço id</p>
+        <h5>Compondente Indicadores</h5>
+        <p>Poderíamos recuperar os indicadores do serviço id {{id}}</p>
     </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     name: 'Indicadores',
     props: ['id'],
     created() {
-        console.log('Indicadores', this.id)
-    }
+        //console.log('Indicadores - parâmetro va props', this.id)
+    }    
 }
 </script>
