@@ -47,7 +47,16 @@ const routes = [
             }, //localhost:8080/home/vendas
             { path: 'servicos', component: Servicos, name: 'servicos', children:
                 [ 
-                    { path: ':id', alias: '/s/:id', name: 'servico', components: 
+                    { 
+                        path: ':id', 
+                        props: {
+                            default: true, 
+                            indicadores: true,
+                            opcoes: true
+                        },
+                        alias: '/s/:id', 
+                        name: 'servico', 
+                        components: 
                         {
                             default: Servico,
                             indicadores: Indicadores,
