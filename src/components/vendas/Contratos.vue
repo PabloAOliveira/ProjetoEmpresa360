@@ -63,8 +63,11 @@ export default {
         pesquisar() {
             console.log(this.formPesquisa)
 
-            const queryParams = new URLSearchParams(this.formPesquisa).toString()
+            Object.keys(this.formPesquisa).forEach(chave => {
+                if(this.formPesquisa[chave] == '') delete this.formPesquisa[chave]
+            })
 
+            const queryParams = new URLSearchParams(this.formPesquisa).toString()
             console.log(queryParams)
             const url =  `http://localhost:3000/contratos?${this.parametrosDeRelacionamento}&${queryParams}`
         this.getDadosApi(url)
