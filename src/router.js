@@ -19,16 +19,27 @@ import VendasPadrao from '@/components/vendas/VendasPadrao.vue'
 const routes = [
     {
         path: '/', //localhost:8080/
-        component: Site
+        component: Site,
+        meta: { requerAutorizacao: false }
     },
     {
         path: '/home', //localhost:8080/home
+        meta: { requerAutorizacao: true },
         alias: '/app',
         component: Home,
         children: [
             { path: 'vendas', component: Vendas, children: 
                 [
-                    { path: 'leads', component: Leads, name: 'leads' }, //localhost:8080/home/vendas/leads
+                    { 
+                        path: 'leads', 
+                        component: Leads, 
+                        name: 'leads',
+                        //beforeEnter(to, from, next) {
+                        beforeEnter() {
+                            //poderíamos verificar se o usuário tem permissão de carregar a rota
+                            console.log('Guarda de rota beforeEnter')
+                        }
+                    }, //localhost:8080/home/vendas/leads
                     { 
                         path: 'leads/:id/:outroParametro', 
                         props: true,
@@ -95,7 +106,8 @@ const routes = [
     },
     {
         path: '/login', //localhost:8080/login
-        component: Login
+        component: Login,
+        meta: { requerAutorizacao: false, campo2: 'teste', campo3: 50 }
     },
     { path: '/redirecionamento-1', redirect: '/home/servicos' },
     { path: '/redirecionamento-2', redirect: { name: 'leads' } },
@@ -116,6 +128,20 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes //routes: routes
+})
+
+//router.beforeEach((to, from, next) => {
+router.beforeEach(() => {
+    console.log('Guarda global beforeEach')
+})
+
+//router.afterEach((to, from) => {
+router.afterEach(() => {
+    console.log('Guarda global afterEach')
+})
+
+router.beforeResolve(() => {
+    console.log('Guarda global beforeResolve')
 })
 
 export default router

@@ -11,6 +11,10 @@ export default {
     props: ['id'],
     created() {
         //console.log('Parâmetro via props', this.id)
-    }    
+    },
+    //beforeRouteUpdate(to, from, next) {
+    beforeRouteUpdate() {
+        console.log('Guarda de componente beforeRouteUpdate')
+    }
 }
 </script>
