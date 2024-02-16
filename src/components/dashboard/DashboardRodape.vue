@@ -1,3 +1,3 @@
 <template>
-    <p>Aqui fica o rodape personalizado do dashboard</p>
+    <p>Aqui fica o rodapé personalizado do Dashboard</p>
 </template>

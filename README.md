@@ -1,4 +1,4 @@
-# projetoempresa360
+# empresa360
 
 ## Project setup
 ```

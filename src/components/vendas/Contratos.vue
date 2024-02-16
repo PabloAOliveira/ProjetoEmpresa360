@@ -61,12 +61,12 @@ export default {
     }),
     methods: {
         pesquisar() {
-            const url =  `http://localhost:3000/contratos?${this.parametrosDeRelacionamento}`
-        this.getDadosApi(url, this.formPesquisa)
+            const url = `http://localhost:3000/contratos?${this.parametrosDeRelacionamento}`
+            this.getDadosApi(url, this.formPesquisa)
         }
     },
     created() {
-        const url =  `http://localhost:3000/contratos?${this.parametrosDeRelacionamento}`
+        const url = `http://localhost:3000/contratos?${this.parametrosDeRelacionamento}`
         this.getDadosApi(url, this.$route.query)
     },
     beforeRouteUpdate(to, from, next) {

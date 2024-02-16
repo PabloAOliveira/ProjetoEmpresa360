@@ -10,10 +10,9 @@ export default {
             })
 
             const urlQueryParams = new URLSearchParams(queryParams).toString()
- 
+            
             const urlCompleta = urlQueryParams ? `${url}&${urlQueryParams}` : url
 
- 
             fetch(urlCompleta)
                 .then(response => response.json())
                 .then(response => {
